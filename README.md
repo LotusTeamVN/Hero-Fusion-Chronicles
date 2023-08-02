@@ -1,16 +1,16 @@
 # Services Integration Information
 
 ## ID For All
-com.megaads.bladesmithmaster
+com.icehousestudio.sommonmergeherorush
 
 ## Unity Project
-- Dashboard: [Blade Smith Master][unity-dashboard]
+- Dashboard: [Sommon-Merge Hero Rush][unity-dashboard]
 - Project ID/UPID: 
 
 ## Unity Ads Service
 
 ### Android
-- Store ID: [com.megaads.bladesmithmaster][play-store]
+- Store ID: [com.icehousestudio.sommonmergeherorush][play-store]
 - Game ID: 
 
 ### iOS
@@ -26,7 +26,7 @@ com.megaads.bladesmithmaster
 
 ### Android
 - [App ID][admob-android]: 
-- Package name: com.megaads.bladesmithmaster
+- Package name: com.icehousestudio.sommonmergeherorush
 - App store: 
 - Ad units:  
 
@@ -45,13 +45,13 @@ com.megaads.bladesmithmaster
 |  |  |  |  |
 
 ## Firebase
-- Project Name: [Blade Smith Master][firebase]
+- Project Name: [Sommon-Merge Hero Rush][firebase]
 - Project ID: 
 - Project Number: 
 
 ### Android:
 - App ID:
-- Package Name: com.megaads.bladesmithmaster
+- Package Name: com.icehousestudio.sommonmergeherorush
 - Fingerprints:
   - SHA-1: 
   - SHA-1: 
@@ -60,7 +60,7 @@ com.megaads.bladesmithmaster
 
 ### iOS:
 - App ID: 
-- Bundle ID: com.megaads.bladesmithmaster
+- Bundle ID: com.icehousestudio.sommonmergeherorush
 - App Store ID: 
 - Team ID: 
 
