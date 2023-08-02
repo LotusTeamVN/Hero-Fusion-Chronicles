@@ -1,0 +1,168 @@
+# Macros.
+
+## Macro for Unity YAML-based asset files.
+[attr]unityyaml         merge=unityyamlmerge diff -text
+
+## Macro for all binary file that should use Git LFS.
+[attr]gitlfs            filter=lfs diff=lfs merge=lfs -text
+
+# Configurations.
+
+## Normalized line-ending.
+*                       text=auto
+
+## Scripts.
+*.cginc                 text
+*.cs                    text diff=csharp
+*.shader                text
+
+## Unity Text Assets.
+*.anim                  unityyaml
+*.asmdef                unityyaml
+*.asmref                unityyaml
+*.asset                 unityyaml
+*.brush                 unityyaml
+*.controller            unityyaml
+*.flare                 unityyaml
+*.fontsettings          unityyaml
+*.giparams              unityyaml
+*.guiskin               unityyaml
+*.mat                   unityyaml
+*.mask                  unityyaml
+*.meta                  unityyaml
+*.mixer                 unityyaml
+*.overrideController    unityyaml
+*.physicMaterial2D      unityyaml
+*.physicMaterial        unityyaml
+*.physicsMaterial2D     unityyaml
+*.physicsMaterial       unityyaml
+*.playable              unityyaml
+*.prefab                unityyaml
+*.preset                unityyaml
+*.renderTexture         unityyaml
+*.shadervariants        unityyaml
+*.spriteatlas           unityyaml
+*.terrainlayer          unityyaml
+*.unity                 unityyaml
+
+## Unity Binary Assets.
+
+## Unity-specific.
+*.cubemap               gitlfs
+*.unitypackage          gitlfs
+### NOTE: terrain assets must have '-Terrain` suffix.
+*-[Tt]errain.asset      gitlfs -unityyaml
+### NOTE: NavMesh assets must have '-NavMesh` suffix.
+*-[Nn]av[Mm]esh.asset   gitlfs -unityyaml
+
+## 3D Models.
+*.3dm                   gitlfs
+*.3ds                   gitlfs
+*.abc                   gitlfs
+*.bin                   gitlfs
+*.blend                 gitlfs
+*.blender               gitlfs
+*.c4d                   gitlfs
+*.collada               gitlfs
+*.dae                   gitlfs
+*.dxf                   gitlfs
+*.FBX                   gitlfs
+*.fbx                   gitlfs
+*.glb                   gitlfs
+*.jas                   gitlfs
+*.lwo                   gitlfs
+*.lwo2                  gitlfs
+*.lws                   gitlfs
+*.lxo                   gitlfs
+*.ma                    gitlfs
+*.max                   gitlfs
+*.mb                    gitlfs
+*.obj                   gitlfs
+*.ply                   gitlfs
+*.skp                   gitlfs
+*.stl                   gitlfs
+*.ztl                   gitlfs
+
+## Executable/Installer.
+*.apk                   gitlfs
+*.exe                   gitlfs
+
+## Compiled Dynamic Library.
+*.dll                   gitlfs
+*.mdb                   gitlfs
+*.pdb                   gitlfs
+*.so                    gitlfs
+
+## Compressed Archive.
+*.7z                    gitlfs
+*.bz2                   gitlfs
+*.gz                    gitlfs
+*.rar                   gitlfs
+*.tar                   gitlfs
+*.zip                   gitlfs
+
+## Fonts.
+*.otf                   gitlfs
+*.ttf                   gitlfs
+
+## Documents.
+*.pdf                   gitlfs
+
+## Audio.
+*.aif                   gitlfs
+*.aiff                  gitlfs
+*.it                    gitlfs
+*.mod                   gitlfs
+*.mp3                   gitlfs
+*.ogg                   gitlfs
+*.s3m                   gitlfs
+*.wav                   gitlfs
+*.xm                    gitlfs
+
+## Video.
+*.asf                   gitlfs
+*.avi                   gitlfs
+*.flv                   gitlfs
+*.mov                   gitlfs
+*.mp4                   gitlfs
+*.mpeg                  gitlfs
+*.mpg                   gitlfs
+*.ogv                   gitlfs
+*.wmv                   gitlfs
+
+## Images.
+*.afphoto               gitlfs
+*.afdesign              gitlfs
+*.apng                  gitlfs
+*.atsc                  gitlfs
+*.bmp                   gitlfs
+*.clip                  gitlfs
+*.exr                   gitlfs
+*.dds                   gitlfs
+*.gif                   gitlfs
+*.hdr                   gitlfs
+*.iff                   gitlfs
+*.jpeg                  gitlfs
+*.jpg                   gitlfs
+*.jfif                  gitlfs
+*.leo                   gitlfs
+*.kra                   gitlfs
+*.kpp                   gitlfs
+*.pict                  gitlfs
+*.png                   gitlfs
+*.psb                   gitlfs
+*.psd                   gitlfs
+*.svg                   gitlfs
+*.svgz                  gitlfs
+*.tga                   gitlfs
+*.TGA                   gitlfs
+*.tif                   gitlfs
+*.tiff                  gitlfs
+*.webm                  gitlfs
+*.webp                  gitlfs
+*.xcf                   gitlfs
+
+## ETC.
+*.a                     gitlfs
+*.rns                   gitlfs
+*.reason                gitlfs
