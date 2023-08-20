@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace HFC.Hero
 {
     /// <summary>
-    /// Calss dùng để config các chỉ số của hero
+    /// Class dùng để config các chỉ số của hero
     /// </summary>
     public class HeroConfig
     {
