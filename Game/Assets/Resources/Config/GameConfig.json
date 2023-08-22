@@ -164,5 +164,173 @@
 				}
 			}
 		}
+	},
+	"equipmentConfig\r\n" : {
+		"equipments\r\n" : {
+			"sword" : {
+				"type" : 0,
+				"bonusATKPercent" : {
+					"levelCoefficient" : {
+						"1" : 13,
+						"2" : 20,
+						"3" : 35,
+						"4" : 110
+					}
+				},
+				"extendedStats" : [ 1, 2, 3, 6, 10 ]
+			},
+			"bow" : {
+				"type" : 1,
+				"bonusATKSPPercent" : {
+					"levelCoefficient" : {
+						"1" : 25,
+						"2" : 40,
+						"3" : 70,
+						"4" : 120
+					}
+				},
+				"extendedStats" : [ 1, 2, 3, 6, 10 ]
+			},
+			"staff" : {
+				"type" : 2,
+				"bonusSPPercent" : {
+					"levelCoefficient" : {
+						"1" : 40,
+						"2" : 70,
+						"3" : 120,
+						"4" : 200
+					}
+				},
+				"extendedStats" : [ 1, 2, 3, 6, 8, 10 ]
+			},
+			"armor" : {
+				"type" : "3",
+				"bonusHPPercent" : {
+					"levelCoefficient" : {
+						"1" : 13,
+						"2" : 20,
+						"3" : 35,
+						"4" : 60
+					},
+					"type" : "3"
+				},
+				"extendedStats" : [ 2, 4, 5, 7, 9 ]
+			}
+		},
+		"extendedStats" : {
+			"1" : {
+				"id" : 1,
+				"lowHPThreshold" : {
+					"levelCoefficient" : {
+						"2" : 20,
+						"3" : 20,
+						"4" : 40
+					}
+				}
+			},
+			"2" : {
+				"id" : 2,
+				"absoluteDEFMultiplier" : {
+					"levelCoefficient" : {
+						"2" : 1,
+						"3" : 2,
+						"4" : 3
+					}
+				}
+			},
+			"3" : {
+				"id" : 3,
+				"targetCount" : {
+					"levelCoefficient" : {
+						"2" : 2,
+						"3" : 2,
+						"4" : 2
+					}
+				}
+			},
+			"4" : {
+				"id" : 4,
+				"magicReflectPercentage" : {
+					"levelCoefficient" : {
+						"2" : 30,
+						"3" : 30,
+						"4" : 30
+					}
+				},
+				"magicReductionPercentage" : {
+					"levelCoefficient" : {
+						"2" : 50,
+						"3" : 50,
+						"4" : 50
+					}
+				}
+			},
+			"5" : {
+				"id" : 5,
+				"burnRate" : {
+					"levelCoefficient" : {
+						"2" : 1,
+						"3" : 1,
+						"4" : 1
+					}
+				}
+			},
+			"6" : {
+				"id" : 6,
+				"stunChance" : {
+					"levelCoefficient" : {
+						"2" : 20,
+						"3" : 20,
+						"4" : 20
+					}
+				},
+				"attackCountRequired" : {
+					"levelCoefficient" : {
+						"2" : 1,
+						"3" : 1,
+						"4" : 1
+					}
+				}
+			},
+			"7" : {
+				"id" : 7,
+				"ATKSPReductionPercentage" : {
+					"levelCoefficient" : {
+						"2" : 30,
+						"3" : 30,
+						"4" : 30
+					}
+				}
+			},
+			"8" : {
+				"id" : 8,
+				"spellVampPercentage" : {
+					"levelCoefficient" : {
+						"2" : 60,
+						"3" : 60,
+						"4" : 60
+					}
+				}
+			},
+			"9" : {
+				"id" : 9,
+				"DMGReductionPercentage" : {
+					"levelCoefficient" : {
+						"2" : 20,
+						"3" : 20,
+						"4" : 20
+					}
+				}
+			},
+			"10" : {
+				"id" : 10,
+				"silverBonus" : {
+					"levelCoefficient" : {
+						"2" : 4,
+						"3" : 2
+					}
+				}
+			}
+		}
 	}
 }
