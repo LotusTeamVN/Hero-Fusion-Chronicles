@@ -14,6 +14,7 @@ public class MergeLogic
 
     public bool CheckMerge(Trung_DemoHeroCombatAttribute att1, Trung_DemoHeroCombatAttribute att2)
     {
+        if (att1.heroStar >= 7 || att2.heroStar >= 7) return false;
         return att1.heroClass == att2.heroClass && att1.heroStar == att2.heroStar;
     }
 }
