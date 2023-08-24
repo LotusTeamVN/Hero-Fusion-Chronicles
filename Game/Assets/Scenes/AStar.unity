@@ -471,7 +471,7 @@ MonoBehaviour:
     m_Bits: 128
   gridWorldSize: {x: 22, y: 30}
   nodeRadius: 0.5
-  showGrid: 0
+  showGrid: 1
   groundMask:
     serializedVersion: 2
     m_Bits: 8

@@ -53,30 +53,31 @@ namespace NN.PathFinding
             else
                 Destroy(gameObject);
 
-            CreateGrid();
+            CreateGrid(Mathf.RoundToInt(gridWorldSize.x),Mathf.RoundToInt( gridWorldSize.y));
             hasInitialized = true;
         }
 
-        void CreateGrid()
+        void CreateGrid(int gridSizeX, int gridSizeY)
         {
-            grid = new Node[GridSizeX, GridSizeY];
-            gridWorldBottomLeftPos = GroundContact - Vector3.right * gridWorldSize.x / 2 - Vector3.forward * gridWorldSize.y / 2;
+            grid = new Node[gridSizeX, gridSizeY];
 
-            for (int x = 0; x < GridSizeX; x++)
+            for (int x = 0; x < gridSizeX; x++)
             {
-                for (int y = 0; y < GridSizeY; y++)
+                for (int y = 0; y < gridSizeY; y++)
                 {
-                    Vector3 worldPoint = gridWorldBottomLeftPos + Vector3.right * (x * NodeLength + nodeRadius) + Vector3.forward * (y * NodeLength + nodeRadius);
+                    Vector3 worldPoint = new Vector3(x, 0, y);
                     bool walkable = !(Physics.CheckSphere(worldPoint, nodeRadius, notWalkableMask));
                     grid[x, y] = new Node(walkable, worldPoint, x, y);
                 }
             }
         }
 
+
+
         public Node GetNode(Vector3 worldPosition)
         {
-            int x = Mathf.FloorToInt(worldPosition.x - gridWorldBottomLeftPos.x);
-            int y = Mathf.FloorToInt(worldPosition.z - gridWorldBottomLeftPos.z);
+            int x = Mathf.RoundToInt(worldPosition.x - gridWorldBottomLeftPos.x);
+            int y = Mathf.RoundToInt(worldPosition.z - gridWorldBottomLeftPos.z);
 
             if (x < 0 || y < 0)
                 return null;

@@ -30,6 +30,7 @@ namespace NN.PathFinding
             this.gridLocalPosX = gridLocalPosX;
             this.gridLocalPosY = gridLocalPosY;
         }
+   
     }
 }
 
