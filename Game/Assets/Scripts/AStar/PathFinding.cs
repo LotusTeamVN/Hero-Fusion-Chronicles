@@ -7,15 +7,32 @@ public class PathFinding : MonoBehaviour
 {
     public Agent agent;
     public Transform endPos;
-
+    private NN.PathFinding.Grid grid;
     List<Node> path;
-
-
+    private Vector3 Des;
+    private bool Reach;
+    private void Start()
+    {
+        grid = NN.PathFinding.Grid.Instance;
+        Des = new Vector3(grid.GetNode(endPos.position).GridLocalPosX,0,grid.GetNode(endPos.position).GridLocalPosY);
+        agent.OnArrived = new NN.Utilities.NNEvent(OnArrived);
+        
+    }
     private void Update()
     {
-        agent.FindPath(endPos.position);
+
+        if (Reach == true)
+        {
+            return;
+        }
+        agent.FindPath(Des);
     }
 
+
+    void OnArrived()
+    {
+        Reach = true;
+    }
     //private void OnDrawGizmos()
     //{
     //    if (path != null && path.Count > 0)
