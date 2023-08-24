@@ -7,13 +7,23 @@ public class PathFinding : MonoBehaviour
 {
     public Agent agent;
     public Transform endPos;
-
+    private NN.PathFinding.Grid grid;
     List<Node> path;
+    private Vector3 Des;
 
-
+    private void Start()
+    {
+        grid = NN.PathFinding.Grid.Instance;
+        Des = new Vector3(grid.GetNode(endPos.position).GridLocalPosX,0,grid.GetNode(endPos.position).GridLocalPosY);
+      
+        agent.FindPath(Des);
+    }
     private void Update()
     {
-        agent.FindPath(endPos.position);
+   
+       
+
+        agent.FindPath(Des,0.2f);
     }
 
     //private void OnDrawGizmos()
