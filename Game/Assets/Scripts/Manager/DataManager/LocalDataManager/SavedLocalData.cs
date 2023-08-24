@@ -8,14 +8,17 @@ namespace Runtime.Manager.Data
     public class SavedLocalData
     {
         #region Members
-
+        //demo
+        public int heroSlots;
+        public Dictionary<string, int> shopGemDictionary;
         #endregion Members
 
         #region Class Methods
 
         public SavedLocalData()
         {
-
+            this.heroSlots = 4;
+            this.shopGemDictionary = new();
         }
       
 

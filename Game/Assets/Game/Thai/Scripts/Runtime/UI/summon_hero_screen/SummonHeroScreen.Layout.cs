@@ -26,12 +26,9 @@ namespace Runtime.UI
 
         partial void InitLayout()
         {
-            _valueCurrentGold = 300;
-            _valueCurrentRewardGold = 5;
-            _valueCurrentHeart = 3;
-            _valueActiveHeroes = 0;
-            _valueMaxActiveHeroes = 3;
-            _valueRequiredGoldSummon = 2;
+            SetTextCurrentGold();
+            SetTextCurrentRewardGold();
+            SetTextActiveHero();
         }
         private void SetTextCurrentGold()
         {

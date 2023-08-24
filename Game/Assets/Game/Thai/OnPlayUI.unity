@@ -4364,7 +4364,7 @@ MonoBehaviour:
     Type: 0
     InitPos: {x: 0, y: 0, z: 0}
     CurrentPos: {x: 0, y: 0, z: 0}
-    Camera: {fileID: 0}
+    Camera: {fileID: 457067789}
 --- !u!1 &1278509565
 GameObject:
   m_ObjectHideFlags: 0

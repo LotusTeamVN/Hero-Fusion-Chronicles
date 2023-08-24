@@ -1,5 +1,6 @@
 using Cysharp.Threading.Tasks;
 using Runtime.Common;
+using Runtime.Manager.Data;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -26,7 +27,7 @@ namespace Runtime.UI
         }
         private void OnEnable()
         {
-            _inputHandle.TouchChanged += OnTouchChanged;
+         
         }
         private void OnDisable()
         {
@@ -40,6 +41,7 @@ namespace Runtime.UI
             SetupData();
             InitButtons();
             InitLayout();
+            _inputHandle.TouchChanged += OnTouchChanged;
         }
 
         private void OnTouchChanged(InputHandleObj.TouchData data)
@@ -56,6 +58,7 @@ namespace Runtime.UI
 
             if (data.Type == InputHandleObj.InputType.Up)
             {
+         
                 if (data.CurrentPos.y - lastMousePos.y == 0 || isOnSwiping) return;
                 var tmp = data.CurrentPos.y - lastMousePos.y < 0;
                 ActionOnSwipeDownUISummon?.Invoke(tmp);
@@ -77,6 +80,20 @@ namespace Runtime.UI
             Debug.Log("swipe down: " + isDown);
             _fightWhenSwipeDownButton.gameObject.SetActive(isDown);
             Swipe(isDown);
+        }
+
+        //Test Load data local
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.G))
+            {
+                Debug.Log($"hero slots: {DataManager.Local.GetHeroSlotsData()}, {DataManager.Local.GetCountBuyShopGemItemById("gem_id_0")}");
+            }
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                DataManager.Local.AddHeroSlotsData(1);
+                DataManager.Local.AddCountBuyShopGemItemById("gem_id_0");
+            }
         }
 
 
