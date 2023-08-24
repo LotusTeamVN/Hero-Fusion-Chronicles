@@ -3,6 +3,9 @@ using UnityEngine;
 public class GridSpawner : MonoBehaviour
 {
     public GameObject objectToSpawn; // The object you want to spawn.
+    public GameObject spawnPlane;    // The plane to spawn objects on.
+    public float gridSizeX = 7;      // Width of the grid.
+    public float gridSizeZ = 18;     // Length of the grid.
 
     private void Update()
     {
@@ -12,25 +15,33 @@ public class GridSpawner : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(touchPosition);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit) && hit.collider.gameObject == spawnPlane)
             {
                 Vector3 hitPosition = hit.point;
-                Vector3 offset = new Vector3(5, 0, 5);
-                Vector3 matrixScale = new Vector3(10, 0, 10);
 
-                // Calculate grid position based on the matrix
-                int gridX = Mathf.RoundToInt((hitPosition.x - offset.x) / matrixScale.x);
-                int gridY = Mathf.RoundToInt((hitPosition.z - offset.z) / matrixScale.z);
+                // Round the hit position to the nearest grid cell
+                Vector3 spawnPosition = RoundToGridCell(hitPosition);
 
-                SpawnObjectAtGridPosition(gridX, gridY);
+                SpawnObjectAtPosition(spawnPosition);
             }
         }
     }
 
-    // Spawns the object at the specified grid coordinates (x, y).
-    public void SpawnObjectAtGridPosition(int x, int y)
+    // Rounds a position to the nearest grid cell.
+    Vector3 RoundToGridCell(Vector3 position)
     {
-        Vector3 spawnPosition = new Vector3(5 + x * 10, 0f, 5 + y * 10);
-        Instantiate(objectToSpawn, spawnPosition, Quaternion.identity);
+        float cellSizeX = gridSizeX / Mathf.Round(gridSizeX);
+        float cellSizeZ = gridSizeZ / Mathf.Round(gridSizeZ);
+
+        float roundedX = Mathf.Round(position.x / cellSizeX) * cellSizeX;
+        float roundedZ = Mathf.Round(position.z / cellSizeZ) * cellSizeZ;
+
+        return new Vector3(roundedX, 0f, roundedZ);
+    }
+
+    // Spawns the object at the specified position.
+    public void SpawnObjectAtPosition(Vector3 position)
+    {
+        Instantiate(objectToSpawn, position, Quaternion.identity);
     }
 }
