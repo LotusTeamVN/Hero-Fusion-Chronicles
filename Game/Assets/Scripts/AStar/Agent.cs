@@ -76,7 +76,7 @@ namespace NN.PathFinding
         public void FindPath(Vector3 target, float stoppingDistance = 999)
         {
             if (stoppingDistance == 999)
-                stoppingDistance = Radius * 2;
+                stoppingDistance = Radius *2 ;
 
             if (countTime == 0)
             {
