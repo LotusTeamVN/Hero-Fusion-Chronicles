@@ -29,7 +29,7 @@ Chúng ta áp dụng mô hình Agile – quy trình Scrum ở mức linh hoạt 
 
 Các thuật ngữ được chấp nhận và sử dụng rộng rãi trong ngành công nghiệp game [đọc chi tiết](guides/game-development-terms.md)
 
-## Các quy định trong dự án của Ice House Studio
+## Các quy định trong dự án
 
 Đối với toàn bộ thành viên làm việc và thao tác trên dự án liên quan đến Git và Unity nói chung
 
